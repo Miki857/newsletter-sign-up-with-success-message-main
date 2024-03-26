@@ -1,0 +1,231 @@
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0
+}
+
+:root{
+    /* COLORS */
+    --color-primary: hsl(4, 100%, 67%);
+    --color-neutral-1: hsl(234, 29%, 20%);
+    --color-neutral-2: hsl(235, 18%, 26%);
+    --color-neutral-3: hsl(231, 7%, 60%);
+    --color-neutral-4: hsl(0, 0%, 100%);
+
+    /* SIZES */
+    --font-thin: 400;
+    --font-bold: 700;
+
+    /* TYPOGRAPHY */
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: var(--font-thin);
+    font-style: normal;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+.body{
+    width: 100vw;
+    height: 100%;
+
+    .signUpForm{
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--color-neutral-4);
+
+        .illustration{
+            width: 100%;
+            height: 350px;
+            border-radius: 0 0 1rem 1rem;
+
+            background-image: url("../images/illustration-sign-up-mobile.svg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .Form{
+            padding: 1.5rem;
+
+            h1{
+                margin: 1rem 0;
+                font-weight: var(--font-bold);
+                font-size: 2.5rem;
+            }
+
+            p{
+                line-height: 1.5rem;
+            }
+
+            ul{
+                margin: 2rem 0;
+            }
+
+            li{
+                list-style-position: inside;
+                list-style-image: url("../images/icon-list.svg");
+                margin-bottom: 1rem;
+            }
+
+            .inputLabel__container{
+                display: flex;
+                flex-direction: column;
+                
+                label{
+                    margin-bottom: 0.5rem;
+                    font-size: 12px;
+                    font-weight: var(--font-bold);
+                }
+
+                input{
+                    padding: 1rem 1.5rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid var(--color-neutral-3);
+                }
+            }
+
+        }
+    }
+
+    .Thanks{
+        width: 100vw;
+        height: 100%;
+
+        padding: 0 10%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        background-color: var(--color-neutral-4);
+
+        img{
+            max-width: 3.5rem;
+        }
+
+        h1{
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        p{
+            font-size: 14px;
+        }
+
+        .dismiss_btn{
+            width: 100%;
+            color: var(--color-neutral-4);
+            background-color: var(--color-neutral-1);
+
+            border: none;
+            border-radius: 0.5rem;
+            
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+
+            font-weight: var(--font-bold);
+            transition: 0.3s ease-in-out;
+        }
+
+        .dismiss_btn:hover{
+            cursor: pointer;
+            background-color: var(--color-primary);
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 600px){
+
+    .body{
+        background-color: var(--color-neutral-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .signUpForm{
+            border-radius: 1rem;
+            overflow: hidden;
+            width: 80%;
+            height: fit-content;
+        }
+    
+        .Thanks{
+            padding: 2rem !important;
+            width: 50%;
+            height: max-content !important;
+            border-radius: 1rem !important;
+            align-self: center ;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1100px){
+
+    .signUpForm{
+        width: 60% !important;
+        height: 60% !important;
+
+        flex-direction: row-reverse !important;
+        justify-content: space-between !important;
+
+        .illustration{
+            background-image: url("../images/illustration-sign-up-desktop.svg") !important;
+            background-repeat: no-repeat !important;
+
+            width: 40% !important;
+            height: auto !important;
+            border-radius: 0 !important;
+        }
+
+        .Form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60% !important;
+        }
+    }
+    
+    .Thanks{
+        width: 30% !important;
+    }
+
+}
+
+/* ATRIBUTES */
+.button{
+    font-size: 16px;
+    
+    background-color: var(--color-neutral-1);
+    color: var(--color-neutral-4);
+
+    border: none;
+    border-radius: 0.5rem;
+
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+
+    font-weight: var(--font-bold);
+    
+    transition: 0.3s ease-in-out;
+}
+
+.button:hover{
+    background-color: var(--color-primary);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.hidden{
+    visibility: hidden;
+}
